@@ -139,7 +139,7 @@ public class Main {
     private static OcflRepository createRepo(Config config, Path work) throws IOException {
         var ocflWork = Files.createDirectories(work.resolve("ocfl-temp"));
 
-        Log.initLoggingToFile(Log.LogLevel.Debug, "aws-sdk.log");
+        Log.initLoggingToFile(Log.LogLevel.Trace, "aws-sdk.log");
         var clientBuilder = S3AsyncClient.crtBuilder()
                 .credentialsProvider(ProfileCredentialsProvider.builder()
                         .profileName(config.profile)
